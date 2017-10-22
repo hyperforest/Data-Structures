@@ -47,6 +47,22 @@ struct Node* insert(Node* node, int input) {
    return node;
 }
 
+
+/*	
+	-- Search a node is in tree or not --
+	The search function takes two arguments : a node and an integer
+	The node used as the argument processed recursively in order to find the existance of a node on the tree.
+	When the node with value equals to "input" parameter is found, it returns the node,
+	else it returns NULL.
+*/
+
+struct Node* search(Node* node, int input) {
+   if (node == NULL) return NULL;
+   if (node->value == input) return node;
+   if (input < node->value) return search(node->left, input);
+   else return search(node->right, input);
+}
+
 void preOrder(Node* node) {
    cout << node->value << " ";
    if(node->left != NULL) preOrder(node->left);
@@ -66,7 +82,7 @@ void postOrder(Node* node) {
 }
 
 int main() {
-	int N, input;
+	int N, M, input;
 	Node* myTreeRoot = NULL; //We create a new root of our tree, and initally set as NULL
 	
 	cout << "How many nodes do you want to create : "; cin >>N;
@@ -80,4 +96,16 @@ int main() {
 	cout << "\nYour tree in preOrder traversal : "; preOrder(myTreeRoot);
 	cout << "\nYour tree in inOrder traversal : "; inOrder(myTreeRoot);
 	cout << "\nYour tree in postOrder traversal : "; postOrder(myTreeRoot);
+
+
+	cout << "\nHow many numbers do you want to check : "; cin >> M;
+	while (M--) {
+		cout << "Number you want to check : ";
+		cin >> input;
+		if (search(myTreeRoot, input) != NULL)
+			cout << input << " is in our tree\n";
+		else
+			cout << input << " is NOT in our tree\n";
+	}
 }
+
