@@ -7,7 +7,7 @@ using namespace std;
 	Oct 22nd 2017
 	
 	This program provides the basic concept about Binary Search Tree data structure :
-	insertion operation and pre-order, in-order, and post-order traversal.
+	insertion operation, search operation, and basic traversal of a binary tree.
 */
 
 
