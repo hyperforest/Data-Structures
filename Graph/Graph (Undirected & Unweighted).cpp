@@ -53,8 +53,8 @@ void add_to_EL(int a, int b) {
 
 void print_AM(int V) {
 	cout << "\nAM :\n";
-	loop(i, 1, V) {
-		loop(j, 1, V) {
+	loop(i, 0, V) {
+		loop(j, 0, V) {
 			cout << AM[i][j] << " ";
 		}
 		cout << endl;
