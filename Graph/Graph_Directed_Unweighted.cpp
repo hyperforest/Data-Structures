@@ -10,12 +10,12 @@ using namespace std;
 /*
 	Created by : Rimba Erlangga, 2017
 	
-	This program contains code for representating undirected and unweighted graph
+	This program contains code for representating directed and unweighted graph
 	in its adjacency matrix (AM), adjacency list (AL), and edge list (EL) representation.
 	The graph is considered to be simple graph. The vertices is indexed from 0.
 	
 	The AL for each vertex is automatically sorted by index of another vertex it is adjacent with
-	when we insert new edge, and the EL also automatically sorted by index of its vertex.
+	when we insert new edge, and the EL also automatically sorted by index of its first vertex.
 	If edge A-B is contained in the EL, then there is a direct way from vertex A to vertex B.
 	
 	Because the graph is directed, insertion of an edge of A-B does not imply that B-A also get inserted.
